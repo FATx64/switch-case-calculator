@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            .new-line {
+                width: 100%;
+            }
+        </style>
+        <script>
+            function doEval() {
+                const x = parseInt(document.getElementById("valX").value);
+                const y = parseInt(document.getElementById("valY").value);
+                const chosen = document.getElementById("choice").value;
+
+                let result = document.getElementById("result");
+                switch (chosen) {
+                    case "*": result.value = x*y; break;
+                    case "+": result.value = x+y; break;
+                    case "-": result.value = x-y; break;
+                    case "/": result.value = x/y; break;
+                    default: alert("how?"); break;
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="#0E1418" text="white">
+        <p>
+            <label>Input X:</label>
+            <input class="new-line" type="text" id="valX"/>
+        </p>
+        <p>
+            <label>Input Y:</label>
+            <input class="new-line" type="text" id="valY"/>
+        </p>
+        <p>
+            <label>Aritmathica:</label>
+            <select id="choice" class="new-line" size="1">
+                <option value="*">X</option>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+            </select>
+        </p>
+        <p>
+            <label>Hasil:</label>
+            <!--- Read only because when user type in it and eval button executed, it'd fail --->
+            <input class="new-line" readonly type="text" id="result"/>
+        </p>
+        <p>
+            <input type="button" name="eval" id="evalButton" value="Hitung" onclick="doEval();"/>
+        </p>
+    </body>
+</html>
